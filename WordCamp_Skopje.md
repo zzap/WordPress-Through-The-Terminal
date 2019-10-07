@@ -136,7 +136,7 @@ wp scaffold plugin wcskopje --activate
 nano wp-content/plugins/wcskopje/wcskopje.php
 ```
 
-```
+```PHP
 /**
  * Plugin Name:     WordCamp Skopje
  * Plugin URI:      PLUGIN SITE HERE
