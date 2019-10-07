@@ -1,8 +1,8 @@
 # WordCamp Skopje 2019
 
-Date: 05 October 2019
-URL: https://2019.skopje.wordcamp.org/
-Slides: https://docs.google.com/presentation/d/1fWPZSjvZw6s3U95OwjGWK0cAqSPW28kG4PX_dCwN7Ks/edit?usp=sharing
+- Date: 05 October 2019
+- URL: https://2019.skopje.wordcamp.org/
+- Slides: https://docs.google.com/presentation/d/1fWPZSjvZw6s3U95OwjGWK0cAqSPW28kG4PX_dCwN7Ks/edit?usp=sharing
 
 ## ToC
 
