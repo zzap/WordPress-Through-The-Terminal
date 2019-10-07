@@ -1,0 +1,29 @@
+#!/bin/bash
+
+wp core download
+
+read -p 'Database name: ' dbname
+read -p 'Database user: ' dbuser
+read -sp 'Database password: ' dbpass
+echo
+echo Thank you. Your config file is being created.
+
+wp config create --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass
+
+read -p 'Site title: ' title
+read -p 'Site url: ' url
+read -p 'Admin user: ' admin
+read -p 'Admin email: ' email
+read -sp 'Admin password: ' password
+
+wp core install --url=$url --title=$title --admin_user=$admin --admin_password=$password --admin_email=$email
+
+echo "                                                 ";
+echo "  _    _      _ _         _____                  ";
+echo " | |  | |    | | |       |  __ \                 ";
+echo " | |__| | ___| | | ___   | |  | | __ ___   _____ ";
+echo " |  __  |/ _ \ | |/ _ \  | |  | |/ _\ \ \ / / _ \\";
+echo " | |  | |  __/ | | (_) | | |__| | (_| |\ V /  __/";
+echo " |_|  |_|\___|_|_|\___/  |_____/ \__,_| \_/ \___|";
+echo "                                                 ";
+echo "                                                 ";
