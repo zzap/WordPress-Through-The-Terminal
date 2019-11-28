@@ -1,0 +1,106 @@
+#!/bin/bash
+
+##
+# Download WordPress
+#
+# For some reason, setting locale doesn't work. Error is 'not found locale'.
+# wp core download --locale=bg_BG
+##
+wp core download
+
+##
+# Create config file
+#
+# Set default value for database user.
+##
+read -p 'Database name: ' dbname
+read -e -p 'Database user: ' -i 'root' dbuser
+read -sp 'Database password: ' dbpass
+echo
+wp config create --dbname=$dbname --dbuser=$dbuser --dbpass=$dbpass
+
+##
+# Install WordPress
+##
+read -p 'Site title: ' title
+read -p 'Site url: ' url
+read -e -p 'Admin user: ' -i 'admin' admin
+read -e -p 'Admin email: ' -i '<email@example.com>' email
+read -sp 'Admin password: ' password
+
+wp core install --url=$url --title="$title" --admin_user=$admin --admin_password=$password --admin_email=$email
+
+##
+# Create new user with author role to limit dashboard access.
+# https://developer.wordpress.org/cli/commands/user/create/
+#
+# Add specific capabilities so that user have enough access to run website.
+# https://developer.wordpress.org/cli/commands/user/add-cap/
+#
+# @todo: do not use the same password as admin user
+##
+wp user create author author@local.com --role=author --user_pass=$password
+wp user add-cap author edit_posts
+wp user add-cap author manage_categories
+wp user add-cap author edit_pages
+wp user add-cap author activate_plugins
+wp user add-cap author edit_theme_options
+
+##
+# Remove role from default administrator user, it'll deny any access to dashboard.
+# Keep the password strong.
+#
+# https://developer.wordpress.org/cli/commands/user/remove-role/
+##
+wp user remove-role admin
+
+##
+# Install and activate Bulgarian language
+##
+wp language core install bg_BG --activate
+
+##
+# Install and activate custom theme from wp.org repo.
+#
+# https://wordpress.org/themes/davis/
+##
+wp theme install --activate davis
+
+##
+# Delete 'Hello World' post and create additional content.
+#
+# Get post content from post-content.txt file.
+#
+# https://developer.wordpress.org/cli/commands/post/generate/
+##
+wp post delete 1
+cat ./post-content.txt | wp post generate --post_content --post_author=author --count=4
+
+# 2001 A Space Odyssey (1968), Stanley Kubrick
+# https://www.youtube.com/watch?v=oR_e9y-bka0
+echo "                                                 ";
+echo "  _    _      _ _         _____                  ";
+echo " | |  | |    | | |       |  __ \                 ";
+echo " | |__| | ___| | | ___   | |  | | __ ___   _____ ";
+echo " |  __  |/ _ \ | |/ _ \  | |  | |/ _\ \ \ / / _ \\";
+echo " | |  | |  __/ | | (_) | | |__| | (_| |\ V /  __/";
+echo " |_|  |_|\___|_|_|\___/  |_____/ \__,_| \_/ \___|";
+echo "                                                 ";
+echo "                                                 ";
+echo "                                                 ";
+
+##
+# Do we want to open dashboard in browser?
+##
+echo 'Your new WordPress is ready. Do you want to see it? [Yes/No]'
+read seeadmin;
+
+##
+# Uses 'admin' command package.
+#
+# https://developer.wordpress.org/cli/commands/admin/
+##
+if [ "$seeadmin" = "Yes" ];
+    then wp admin
+    else echo "Oki doki, then. Have a wonderful day!"
+fi
