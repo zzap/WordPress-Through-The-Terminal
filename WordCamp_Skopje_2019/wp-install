@@ -18,6 +18,8 @@ read -sp 'Admin password: ' password
 
 wp core install --url=$url --title=$title --admin_user=$admin --admin_password=$password --admin_email=$email
 
+# 2001 A Space Odyssey (1968), Stanley Kubrick
+# https://www.youtube.com/watch?v=oR_e9y-bka0
 echo "                                                 ";
 echo "  _    _      _ _         _____                  ";
 echo " | |  | |    | | |       |  __ \                 ";
