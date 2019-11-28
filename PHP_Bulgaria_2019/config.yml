@@ -1,0 +1,8 @@
+---
+apache_modules:
+  - mod_rewrite
+@client:
+  path: /home/milana/www/milana.dev
+  ssh: <user>@<host>:<port_number>
+@magic:
+  path: /home/milana/www/magic.loc
