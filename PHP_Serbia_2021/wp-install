@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Required:
+# - toilet - http://manpages.ubuntu.com/manpages/bionic/man1/toilet.1.html
+#   - if you don't want this remove lines 27, 28 and 29
+# - xcowsay - http://manpages.ubuntu.com/manpages/bionic/man6/xcowsay.6.html
+#   - if you don't want this remove line 35
+
 wp core download
 
 read -p 'Database name: ' dbname

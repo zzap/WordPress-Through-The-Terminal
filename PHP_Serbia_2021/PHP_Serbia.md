@@ -139,6 +139,11 @@ Move it somewhere in your PATH (user directory `/bin/` is just fine). Check what
 mv wp-install ~/bin/wp-install
 ```
 
+*Note:* for this script to run some additional programs are required. These are just for fun and not essential for installing WordPress. If you don't want them you can remove specified lines in script.
+
+- [toilet](http://manpages.ubuntu.com/manpages/bionic/man1/toilet.1.html) - if you don't want this remove lines 27, 28 and 29
+- [xcowsay](http://manpages.ubuntu.com/manpages/bionic/man6/xcowsay.6.html) - if you don't want this remove line 35
+
 Run it from anywhere.
 
 ```
