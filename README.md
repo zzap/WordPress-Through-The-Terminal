@@ -5,10 +5,17 @@ Commands, code and references from "WordPress Through The Terminal" talk.
 ## ToC
 
 - [Talks](#talks)
+  - [PHP Serbia 2021](#php-serbia-2021)
   - [PHP Bulgaria 2019](#php-bulgaria-2019)
   - [WordCamp Skopje 2019](#wordcamp-skopje-2019)
 
 ## Talks
+
+### PHP Serbia 2021
+
+- Date: 28 August 2021
+- URL: https://2020.phpsrbija.rs/
+- Slides: https://docs.google.com/presentation/d/1fmucIDugL_n1ZFqlfXtcJp98ESOY_mFG4pQoGSFQwBU/edit?usp=sharing
 
 ### PHP Bulgaria 2019
 
