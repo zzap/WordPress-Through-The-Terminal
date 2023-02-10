@@ -1,0 +1,43 @@
+#!/bin/bash
+
+wp core download
+
+read -p 'Database name: ' dbname
+read -sp 'Database password: ' dbpass
+echo
+echo Thank you. Your config file is being created.
+
+wp config create --dbuser=root --dbpass=$dbpass --dbname=$dbname --prompt
+
+read -p 'Site title: ' title
+read -p 'Site url: ' url
+read -p 'Admin user: ' admin
+read -sp 'Admin password: ' password
+echo Oki doki, hold my beer.
+echo Just one more thing.
+echo Almost there.
+
+wp core install --url=$url --title=$title --admin_user=$admin --admin_password=$password --admin_email="${admin}@${dbname}.loc"
+
+wp rewrite structure '/%year%/%monthnum%/%postname%/' --hard
+
+# Steam Locomotive
+# https://www.cyberciti.biz/tips/displays-animations-when-accidentally-you-type-sl-instead-of-ls.html
+sl
+
+# Toilet
+# https://linuxcommandlibrary.com/man/toilet
+toilet -f smmono9 -F metal -t Release the
+toilet -f smmono12 -F metal -t Kraken
+
+echo "Sorry about that locomotive. OK, we ready. You ready?"
+echo "Do you want to release the Kraken? [yes/no]"
+read seeadmin;
+
+if [ "$seeadmin" = "yes" ];
+    # xcowsay
+    # https://manpages.ubuntu.com/manpages/trusty/man6/xcowsay.6.html
+    then xcowsay Hi, I will be your Kraken today! :\)
+    wp admin
+    else echo "Oki doki, then. Have a wonderful day!"
+fi

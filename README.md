@@ -5,12 +5,19 @@ Commands, code and references from "WordPress Through The Terminal" talk.
 ## ToC
 
 - [Talks](#talks)
+  - [Learn WordPress Workshop](#learn-wordpress-workshop)
   - [PHP Konf 2021](#php-konf-2021)
   - [PHP Serbia 2021](#php-serbia-2021)
   - [PHP Bulgaria 2019](#php-bulgaria-2019)
   - [WordCamp Skopje 2019](#wordcamp-skopje-2019)
 
 ## Talks
+
+### Learn WordPress Workshop
+
+- Date: 2 February 2023
+- URL: https://www.meetup.com/learn-wordpress-online-workshops/events/290845435/
+- Slides: https://docs.google.com/presentation/d/1n9kK3nKAH7RT5_ylFKt_VMSOTBK5w-bE6gLqplJ5Npk/edit?usp=sharing
 
 ### PHP Konf 2021
 
